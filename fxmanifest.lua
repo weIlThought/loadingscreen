@@ -40,6 +40,3 @@ loadscreen 'index.html'
 fx_version 'bodacious'
 
 game 'gta5'
-
-
--- Open source code, by Striikez Development team, ps enjoy :)
