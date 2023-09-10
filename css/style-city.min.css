@@ -55,7 +55,7 @@ body {
     line-height: 1;
     font-style: normal;
     font-weight: 400;
-    color: #fff;
+    color: var(--color-primary); /* Use custom color variable */
     letter-spacing: -.04em;
     text-transform: uppercase;
     text-align: center;
@@ -63,12 +63,40 @@ body {
     padding: 0;
     text-shadow: 1px 1px 2px #000;
     position: relative;
-    display: block
+    display: block;
+    animation: waveAnimation 4s infinite alternate, rotateAnimation 8s infinite;
+    letter-spacing: 0.4rem;
 }
 
 @media only screen and (max-width:640px) {
     .title-intro {
         font-size: 57px
+    }
+}
+
+/* Keyframe Animation for the energy waves */
+@keyframes waveAnimation {
+    0% {
+        color: #000000; /* Start with green color */
+        transform: scale(1);
+    }
+    50% {
+        color: #144d14; /* Keep the color green in the middle of the animation */
+        transform: scale(1.2); /* Enlarge the text */
+    }
+    100% {
+        color: whitesmoke; /* At the end of the animation, text becomes white */
+        transform: scale(1.5); /* Continue enlarging the text */
+    }
+}
+
+/* Keyframe Animation for the 3D rotation effect */
+@keyframes rotateAnimation {
+    0% {
+        transform: perspective(400px) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(400px) rotateY(360deg);
     }
 }
 
@@ -81,12 +109,13 @@ body {
     letter-spacing: 1.5em;
     text-transform: uppercase;
     text-shadow: 2px 2px 4px #000;
-    margin: 4px auto;
+    margin: 6px auto;
     padding: 6px 0 0 0;
     border: 1px solid #fff;
     width: 285px;
     height: 25px;
-    background: rgba(0, 0, 0, .55)
+    background: rgba(0, 0, 0, .55);
+    animation: waveAnimation 4s infinite alternate, rotateAnimation 8s infinite;
 }
 
 @media only screen and (max-width:880px) {
